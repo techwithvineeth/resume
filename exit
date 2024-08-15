@@ -1,0 +1,41 @@
+[1mdiff --git a/index.html b/index.html[m
+[1mindex f4e7fbc..3ea7501 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -643,25 +643,17 @@[m
+ 	</div>[m
+ </div>[m
+ [m
+[31m-<div class="modal fade" id="sectionToggleModal" tabindex='-1'>[m
+[31m-	<div class="modal-dialog">[m
+[31m-		<div class="modal-content">[m
+[31m-			<div class="modal-body">[m
+[31m-				<button type="button" class="close" data-dismiss="modal">&times;</button>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionEducation">Education</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionExperience">Experience</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionPublications">Publications</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionProjects">Projects</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionSkills">Technical Skills</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionResponsibility">Positions of Responsibility</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionAchievements">Achievements</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCourses">Key courses taken</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCurricular">Extra curriculars</label></div>[m
+[31m-				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionFooterMessage">References message</label></div>[m
+[31m-			</div>[m
+[31m-		</div>[m
+[31m-	</div>[m
+[31m-</div>[m
+[32m+[m[32m<!-- Include jQuery and jQuery UI -->[m
+[32m+[m[32m<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>[m
+[32m+[m[32m<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>[m
+[32m+[m[32m<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">[m
+[32m+[m
+[32m+[m[32m<script>[m
+[32m+[m[32m$(function() {[m
+[32m+[m[32m    $("#sortableCheckboxes").sortable();[m
+[32m+[m[32m    $("#sortableCheckboxes").disableSelection();[m
+[32m+[m[32m});[m
+[32m+[m[32m</script>[m
+ [m
+ [m
+ [m

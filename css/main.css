@@ -300,3 +300,14 @@ td.header {
 #Uploadimage {
 	margin-left: 1px; /* Adjust the margin as needed */
 }
+#sortableCheckboxes .checkbox {
+    cursor: move; /* Ensure the cursor indicates draggable items */
+}
+
+#sortableCheckboxes .ui-sortable-helper {
+    /* Ensure the helper element is styled correctly */
+    background: #f0f0f0; /* Example background color */
+    border: 1px solid #ccc; /* Example border */
+    position: relative; /* Ensure position is relative */
+    z-index: 1000; /* Ensure it is above other elements */
+}
