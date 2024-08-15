@@ -193,6 +193,12 @@
 				<h5>
 					<button class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide/Re-arrange sections</button>
 				</h5>
+				<div class="button-container">
+					<button class="btn btn-sm btn-block btn-primary" id="downloadBtn">Download HTML as JSON</button>
+					<input type="file" id="uploadInput" style="display: none;">
+					<button class="btn btn-sm btn-block btn-primary" id="uploadBtn">Upload JSON</button>
+				</div>
+				
 
 				<hr>
 
@@ -229,20 +235,7 @@
 					<div style="display:none;" id="image_box" >
 						<img id="iitg_logo" src="images/iitg_logo.png" height="80" width="80">
 					</div>
-					<script>
-						document.getElementById('imageUpload').addEventListener('change', function(event) {
-							const file = event.target.files[0];
-							if (file) {
-								const reader = new FileReader();
-								reader.onload = function(e) {
-									const img = document.getElementById('iitg_logo');
-									img.src = e.target.result;
-									img.style.display = 'block';
-								};
-								reader.readAsDataURL(file);
-							}
-						});
-					</script>
+
 					<div id="info" style="display:inline-block;">
 						<h2 id="contentName">Your Name</h2>
 						<h5 id="contentRoll">About Me</h5>

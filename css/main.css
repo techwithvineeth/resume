@@ -311,3 +311,11 @@ td.header {
     position: relative; /* Ensure position is relative */
     z-index: 1000; /* Ensure it is above other elements */
 }
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.button-container .btn {
+    flex: 1; /* Make buttons take equal space */
+}

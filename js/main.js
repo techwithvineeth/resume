@@ -397,3 +397,84 @@ function getSelectionContainerElement()
 function insertAfter(referenceNode,newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
+
+document.getElementById('downloadBtn').addEventListener('click', function() {
+	downloadHTMLAsJSON();
+});
+
+document.getElementById('uploadBtn').addEventListener('click', function() {
+	document.getElementById('uploadInput').click();
+});
+
+document.getElementById('uploadInput').addEventListener('change', function(event) {
+	const file = event.target.files[0];
+	if (file) {
+		const reader = new FileReader();
+		reader.onload = function(e) {
+			const jsonContent = e.target.result;
+			try {
+				const jsonObject = JSON.parse(jsonContent);
+				document.getElementById('right').innerHTML = jsonObject.content;
+				reattachEventListeners();
+			} catch (error) {
+				console.error('Error parsing JSON:', error);
+			}
+		};
+		reader.readAsText(file);
+	}
+});
+
+document.addEventListener('keydown', function(event) {
+	if (event.ctrlKey && event.shiftKey && event.key === 'S') {
+		event.preventDefault();
+		downloadHTMLAsJSON();
+	}
+});
+
+function downloadHTMLAsJSON() {
+	// Step 1: Read the HTML content
+	const htmlContent = document.getElementById('right').innerHTML;
+	
+	// Step 2: Convert to JSON
+	const jsonObject = { content: htmlContent };
+
+	// Step 3: Create a Blob
+	const blob = new Blob([JSON.stringify(jsonObject, null, 2)], { type: 'application/json' });
+
+	// Step 4: Create a Download Link
+	const link = document.createElement('a');
+	link.href = URL.createObjectURL(blob);
+	link.download = 'content.json';
+
+	// Step 5: Trigger the Download
+	link.click();
+}
+
+function reattachEventListeners() {
+	// Reattach any event listeners that were lost during the content replacement
+	document.getElementById('downloadBtn').addEventListener('click', function() {
+		downloadHTMLAsJSON();
+	});
+
+	document.getElementById('uploadBtn').addEventListener('click', function() {
+		document.getElementById('uploadInput').click();
+	});
+}
+
+function customSaveFunction() {
+	downloadHTMLAsJSON();
+
+}
+
+document.getElementById('imageUpload').addEventListener('change', function(event) {
+	const file = event.target.files[0];
+	if (file) {
+		const reader = new FileReader();
+		reader.onload = function(e) {
+			const img = document.getElementById('iitg_logo');
+			img.src = e.target.result;
+			img.style.display = 'block';
+		};
+		reader.readAsDataURL(file);
+	}
+});
