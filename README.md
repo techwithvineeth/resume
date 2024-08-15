@@ -1,7 +1,7 @@
 # Resume generator
 Web based editor to create Resume in a customizable template  
   
-Try it : https://techwithvineeth.github.io/resume-generator/
+Try it : https://techwithvineeth.github.io/resume/
 
 **Note** : Click the "VIEW INSTRUCTIONS" button in the editor to read usage instructions.
 
