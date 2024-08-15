@@ -444,7 +444,7 @@ function downloadHTMLAsJSON() {
 	// Step 4: Create a Download Link
 	const link = document.createElement('a');
 	link.href = URL.createObjectURL(blob);
-	link.download = 'content.json';
+	link.download = 'Resume	.json';
 
 	// Step 5: Trigger the Download
 	link.click();
